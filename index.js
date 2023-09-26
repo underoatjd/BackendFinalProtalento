@@ -3,7 +3,7 @@ const express = require('express')
 //2 instanciamos express
 const app = express()
 //4 declaro un puerto
-const port = 8083
+const port = process.env.port || 8083
 // 12 requerimos la conexion a la base de datos
 const conectDatabase = require('./server/database/database')
 //18 requerimos las rutas para poder usarlas
