@@ -6,10 +6,12 @@ const app = express()
 const port = process.env.port || 8083
 // 12 requerimos la conexion a la base de datos
 const conectDatabase = require('./server/database/database')
+// 25 requerimos la conexion a la base de datos
+const cors = require('cors')
 //18 requerimos las rutas para poder usarlas
 const movieRoutes = require('./server/routes/routes')
 
-//24 creamos el middleware para ue todos puedan realizar solicitudes al API
+//25 creamos el middleware para ue todos puedan realizar solicitudes al API
 app.use(cors());
 //20 creamos el middleware para que el metodo POST entienda el request del body
 app.use(express.json())
