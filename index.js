@@ -9,6 +9,8 @@ const conectDatabase = require('./server/database/database')
 //18 requerimos las rutas para poder usarlas
 const movieRoutes = require('./server/routes/routes')
 
+//24 creamos el middleware para ue todos puedan realizar solicitudes al API
+app.use(cors());
 //20 creamos el middleware para que el metodo POST entienda el request del body
 app.use(express.json())
 //17 creamos el middleware para anteponer el /API
