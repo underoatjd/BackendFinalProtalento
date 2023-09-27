@@ -8,7 +8,7 @@ const router = express.Router()
 
 
 //17 ruta para  crear pelicula
-router.post("/movie",(req,res)=>{
+router.post("/createmovie",(req,res)=>{
     const postMovie = movieSchema(req.body)
     postMovie.save()
     .then((data)=>{res.json(data)})
@@ -16,7 +16,7 @@ router.post("/movie",(req,res)=>{
 })
 
 //21 ruta para obtener todas las peliculas
-router.get("/movie",(req,res)=>{
+router.get("/movies",(req,res)=>{
     const getAllMovies = movieSchema
     getAllMovies.find()
     .then((data)=>{res.json(data)})
@@ -24,7 +24,7 @@ router.get("/movie",(req,res)=>{
 })
 
 //22 ruta para obtener una pelicula especifica por ID
-router.get("/movie/:id",(req,res)=>{
+router.get("/moviebyid/:id",(req,res)=>{
     const { id } = req.params
     const getOneMovie = movieSchema
     getOneMovie
@@ -34,7 +34,7 @@ router.get("/movie/:id",(req,res)=>{
 })
 
 //23 ruta para obtener una pelicula especifica por ID y actualizarla o modificarla
-router.put("/movie/:id",(req,res)=>{
+router.put("/actualizarmovie/:id",(req,res)=>{
     const { id } = req.params
     const { adult, original_language, original_title, overview, poster_path, release_date } = req.body
     movieSchema
@@ -44,7 +44,7 @@ router.put("/movie/:id",(req,res)=>{
 })
 
 //24 ruta para obtener una pelicula especifica por ID y eliminarla
-router.delete("/movie/:id",(req,res)=>{
+router.delete("/deletemovie/:id",(req,res)=>{
     const { id } = req.params
     const deleteMovie = movieSchema
     deleteMovie

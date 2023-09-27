@@ -1,11 +1,11 @@
 //17.1 creamos una prueba para llamar el endpoint o al metodo POST
 // puedo usar POSTman pero vamos a usar en esta ocacion la extencion RESTclient de VScode
 ###
-POST http://localhost:8083/api/movie HTTP/1.1
+POST http://localhost:8083/api/createmovie HTTP/1.1
 Content-Type: application/json
 
 {
-    "id": 38,
+    "id": 39,
     "adult":false,
     "original_language":"en",
     "original_title":"Blue Beefefeetle",
@@ -16,28 +16,27 @@ Content-Type: application/json
 
 //21 creamos una prueba para llamar el endpoint o al metodo GET par traer todas las peliculas
 ###
-GET http://localhost:8083/api/movie HTTP/1.1
+GET http://localhost:8083/api/movies HTTP/1.1
 
 
 //22 creamos una prueba para llamar el endpoint o al metodo GET para una sola pelicula apartir del ID
 ###
-GET http://localhost:8083/api/movie/6500a5e0637b831cc410fa0c HTTP/1.1
+GET http://localhost:8083/api/moviebyid/651452d228ad7bebb810203e HTTP/1.1
 
 //23 creamos una prueba para llamar el endpoint o al metodo put
 ###
-PUT http://localhost:8083/api/movie/6511fad7f2d2e94f840fdf1a HTTP/1.1
+PUT http://localhost:8083/api/actualizarmovie/651452d228ad7bebb810203e HTTP/1.1
 Content-Type: application/json
 
 {
-    "id": 34,
     "adult":false,
     "original_language":"en",
-    "original_title":"fffffffffffffffffffff Beetle",
-    "overview":"Un adolescente mexicafffffffffffffffffffno encuentra un escarabajo alienígena que le proporciona una armadura superpoderosa.",
+    "original_title":"kahica cala",
+    "overview":"Un vvdvdvddvd proporciona una armadura superpoderosa.",
     "poster_path":"https://i.postimg.cc/CxwDCG0L/Blu-Beetle.jpg",
     "release_date": "2023-08-09"
 }
 
 //24 creamos una prueba para llamar el endpoint o al metodo DELETE y eliminar peliculas
 ###
-DELETE  http://localhost:8083/api/movie/65120630ce511074290ec4e8 HTTP/1.1
+DELETE  http://localhost:8083/api/deletemovie/651452d228ad7bebb810203e HTTP/1.1
